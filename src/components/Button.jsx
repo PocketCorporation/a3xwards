@@ -7,6 +7,7 @@ const Button = ({title,id,rightIcon,leftIcon,containerClass}) => {
     <span className="relative inline-flex overflow-hidden font-general font-xs uppercase">
     {title}
     </span>
+    {rightIcon}
     </button>
   )
 }
