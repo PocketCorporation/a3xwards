@@ -12,19 +12,19 @@ const Navbar = () => {
   const [isAudioPlaying,setIsAusioPlaying] = useState(false)
   const [isIndicatorActive,setIsIndicatorActive] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const [isNavVisible, setisNavVisible] = useState(true)
+  const [isNavVisible, setIsNavVisible] = useState(true)
 
   const { y: currentScrollY } = useWindowScroll()
 
   useEffect(()=>{
     if(currentScrollY === 0) {
-        setisNavVisible(true)
+        setIsNavVisible(true)
         navContainerRef.current.classList.remove('floating-nav')
     } else if (currentScrollY > lastScrollY) {
-        setisNavVisible(false)
+        setIsNavVisible(false)
         navContainerRef.current.classList.add('floating-nav')
     } else if(currentScrollY < lastScrollY) {
-        setisNavVisible(true)
+        setIsNavVisible(true)
         navContainerRef.current.classList.add('floating-nav')
     }
     setLastScrollY(currentScrollY)
